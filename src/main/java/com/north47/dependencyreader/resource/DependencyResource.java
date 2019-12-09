@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/dependencies")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class DependencyResource {
 
     @Autowired

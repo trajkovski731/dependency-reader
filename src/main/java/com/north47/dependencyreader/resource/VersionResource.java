@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/versions")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class VersionResource {
 
     @Autowired
