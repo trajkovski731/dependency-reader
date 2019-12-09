@@ -2,9 +2,11 @@ package com.north47.dependencyreader.resource;
 
 import com.north47.dependencyreader.domain.Dependency;
 import com.north47.dependencyreader.service.DependencyService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -12,9 +14,17 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class DependencyResource {
 
-    @Autowired
     private DependencyService dependencyService;
 
+    public DependencyResource(DependencyService dependencyService) {
+        this.dependencyService = dependencyService;
+    }
+
+    @PostMapping(value = "/create", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    public void createDependencies(@RequestParam("dependencies") MultipartFile dependencies,
+                                   @RequestParam("info") MultipartFile info) throws IOException {
+        dependencyService.createDependency(dependencies, info);
+    }
 
     @GetMapping("/{id}")
     public List<Dependency> getDependenciesForProjectAndVersion(@PathVariable Long id) {

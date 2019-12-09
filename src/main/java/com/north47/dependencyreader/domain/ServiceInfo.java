@@ -1,15 +1,14 @@
 package com.north47.dependencyreader.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+
+@AllArgsConstructor
+@NoArgsConstructor
 public class ServiceInfo {
     private String name;
     private String version;
-
-    public ServiceInfo() { }
-
-    public ServiceInfo(String name, String version) {
-        this.name = name;
-        this.version = version;
-    }
 
     public String getVersion() {
         return version;

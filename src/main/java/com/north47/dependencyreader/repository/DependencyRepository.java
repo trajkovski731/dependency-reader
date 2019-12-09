@@ -8,4 +8,5 @@ import java.util.List;
 public interface DependencyRepository extends JpaRepository<Dependency, Long> {
 
     List<Dependency> findAllByVersionId(Long versionId);
+    void deleteAllByVersionId(Long versionId);
 }
