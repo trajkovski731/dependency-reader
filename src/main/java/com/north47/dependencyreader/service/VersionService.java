@@ -15,11 +15,11 @@ public class VersionService {
     @Autowired
     private VersionRepository versionRepository;
 
-    public Version createProject(Version version) {
+    public Version createVersion(Version version) {
         return versionRepository.save(version);
     }
 
-    public Version updateProject(Version version) {
+    public Version updateVersion(Version version) {
         return versionRepository.save(version);
     }
 
