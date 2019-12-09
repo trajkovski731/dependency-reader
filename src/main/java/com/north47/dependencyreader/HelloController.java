@@ -9,12 +9,6 @@ import java.io.IOException;
 @RestController
 public class HelloController {
 
-    @GetMapping("/hello")
-    public String sayHello() {
-        return "Hello ELena! You are not so loud";
-    }
-
-
     @PostMapping(value = "/create", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public String importUsers(@RequestParam("files") MultipartFile file) throws IOException {
         //file.transferTo();
