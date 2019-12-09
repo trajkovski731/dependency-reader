@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/dependencies")
-@CrossOrigin(origins = "*")
 public class DependencyResource {
 
     private DependencyService dependencyService;

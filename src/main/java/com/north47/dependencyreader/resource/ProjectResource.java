@@ -10,7 +10,6 @@ import java.util.function.Supplier;
 
 @RestController
 @RequestMapping("/projects")
-@CrossOrigin(origins = "*")
 public class ProjectResource {
 
     @Autowired
