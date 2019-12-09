@@ -14,7 +14,6 @@ public class HelloController {
         //file.transferTo();
 //        System.out.println("This is the file:" + dependencies.getName());
 //        String content = new String(dependencies.getBytes(), "UTF-8");
-//        System.out.println(content);
         System.out.println("This is the file:" + info.getName());
         return "We are ok";
     }
