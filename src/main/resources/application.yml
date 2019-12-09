@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: 'jdbc:postgresql://ec2-46-137-120-243.eu-west-1.compute.amazonaws.com:5432/d3nt7nh4atq98m'
+    username: 'ygulpudppyxhcx'
+    password: 'd7b8329b04aeed7479c4e662c087f6dad8c5d1d98b4421ebf8f2a6f2578301dd'
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
