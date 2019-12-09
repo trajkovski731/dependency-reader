@@ -1,6 +1,5 @@
 package com.north47.dependencyreader.resource;
 
-import com.north47.dependencyreader.domain.Project;
 import com.north47.dependencyreader.domain.Version;
 import com.north47.dependencyreader.service.VersionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/version")
+@RequestMapping("/versions")
 public class VersionResource {
 
     @Autowired
