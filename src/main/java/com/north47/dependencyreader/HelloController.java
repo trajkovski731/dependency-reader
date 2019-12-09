@@ -1,3 +1,5 @@
+package com.north47.dependencyreader;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
