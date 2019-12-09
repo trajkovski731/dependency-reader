@@ -1,5 +1,6 @@
 package com.north47.dependencyreader.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -13,9 +14,20 @@ public class Dependency {
 
     private String name;
 
+    private String value;
+
     @ManyToOne
     @JsonIgnoreProperties("dependencies")
+    @JsonIgnore
     private Version version;
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
 
     public Long getId() {
         return id;

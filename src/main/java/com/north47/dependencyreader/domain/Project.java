@@ -12,7 +12,7 @@ public class Project {
 
     private String name;
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY)
     private List<Version> versions;
 
     public Long getId() {

@@ -9,20 +9,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/dependencies")
+@CrossOrigin
 public class DependencyResource {
 
     @Autowired
     private DependencyService dependencyService;
 
 
+    @GetMapping("/{id}")
+    public List<Dependency> getDependenciesForProjectAndVersion(@PathVariable Long id) {
+        return dependencyService.findByVersionId(id);
+    }
+
     @PostMapping
     public Dependency saveDependency(@RequestBody Dependency dependency) {
         return dependencyService.createDependency(dependency);
-    }
-
-    @GetMapping("/{id}")
-    public Dependency getDependencyById(@PathVariable Long id) {
-        return dependencyService.findDependencyById(id);
     }
 
     @GetMapping

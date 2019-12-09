@@ -1,5 +1,6 @@
 package com.north47.dependencyreader.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public class Version {
     private String version;
 
     @OneToMany(mappedBy = "version")
+    @JsonIgnore
     private List<Dependency> dependencies;
 
     @ManyToOne

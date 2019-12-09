@@ -13,6 +13,10 @@ public class DependencyService {
     @Autowired
     private DependencyRepository dependencyRepository;
 
+    public List<Dependency> findByVersionId(Long id) {
+        return dependencyRepository.findAllByVersionId(id);
+    }
+
     public Dependency createDependency(Dependency dependency) {
         return dependencyRepository.save(dependency);
     }
