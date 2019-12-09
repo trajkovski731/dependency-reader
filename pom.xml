@@ -55,7 +55,7 @@
                             <goal>resolve</goal>
                         </goals>
                         <configuration>
-                            <outputFile>${project.build.directory}/src/main/resources/static/pom.txt</outputFile>
+                            <outputFile>${user.dir}/src/main/resources/static/pom.txt</outputFile>
                         </configuration>
                     </execution>
                 </executions>
