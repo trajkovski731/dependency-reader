@@ -110,4 +110,16 @@ public class DependencyService {
     private String splitByEquals(String input) {
         return input.split("=")[1];
     }
+
+    public List<Dependency> getForArtifactAndVersionId(String artifact, String versionName) {
+        Project project = projectRepository.findByName(artifact).orElseThrow
+                (() -> new RuntimeException("Can't find the project"));
+        return project.getVersions().stream()
+                .filter(version -> version.getVersion().equals(versionName))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("No such version"))
+                .getDependencies();
+
+
+    }
 }

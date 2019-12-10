@@ -25,6 +25,13 @@ public class DependencyResource {
         dependencyService.createDependency(dependencies, info);
     }
 
+    @GetMapping("/{artifact}/{version}")
+    public List<Dependency> getDependenciesForArtifactAndVersion(@PathVariable String artifact,
+                                                                 @PathVariable String version) {
+        return dependencyService.getForArtifactAndVersionId(artifact, version);
+
+    }
+
     @GetMapping("/{id}")
     public List<Dependency> getDependenciesForProjectAndVersion(@PathVariable Long id) {
         return dependencyService.findByVersionId(id);
