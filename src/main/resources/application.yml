@@ -6,6 +6,12 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-
+  boot:
+    admin:
+      ui:
+        cache:
+          no-cache: true
+        extension-resource-locations: file:@project.basedir@/spring-boot-admin-sample-custom-ui/target/dist/
+        cache-templates: false
